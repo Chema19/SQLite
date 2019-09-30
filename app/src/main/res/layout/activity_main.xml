@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.MainActivity">
+    <Button
+        android:id="@+id/addButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints"
+        android:background="@color/colorPrimary"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="20dp"
+        android:text="Agregar Entrega"
+        android:textColor="#ffffff"/>
+
+  <androidx.cardview.widget.CardView
+      android:id="@+id/titleCardView"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      tools:ignore="MissingConstraints"
+      app:layout_constraintTop_toBottomOf="@id/addButton"
+      android:layout_margin="10dp">
+
+   <androidx.constraintlayout.widget.ConstraintLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="vertical"
+       android:padding="10dp">
+
+        <TextView
+            android:id="@+id/ordenTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ORDEN"/>
+
+        <TextView
+            android:id="@+id/direccionTextView"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:text="DIRECCION"
+            app:layout_constraintStart_toEndOf="@id/ordenTextView"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/ratingTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RATING"
+            app:layout_constraintEnd_toEndOf="parent"/>
+   </androidx.constraintlayout.widget.ConstraintLayout>
+
+  </androidx.cardview.widget.CardView>
+
+
+  <androidx.recyclerview.widget.RecyclerView
+      android:id="@+id/entregasRecyclerView"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      app:layout_constraintTop_toBottomOf="@id/titleCardView"
+      android:layout_margin="10dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
