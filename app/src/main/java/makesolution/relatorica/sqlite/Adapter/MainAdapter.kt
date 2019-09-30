@@ -44,8 +44,7 @@ class MainAdapter (var entregas :ArrayList<EntregaModel>, val context: Context):
             direccionTextView.text = entrega.Address
             ratingTextView.text = entrega.Rating.toString()
             ratingCardView.setOnClickListener{view ->
-                context.startActivity(
-                    Intent(context, SecondActivity::class.java)
+                context.startActivity(Intent(context, SecondActivity::class.java)
                         .putExtras(entrega.toBundle()))
             }
         }

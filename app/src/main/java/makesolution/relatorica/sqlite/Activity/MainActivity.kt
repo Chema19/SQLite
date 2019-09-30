@@ -20,9 +20,8 @@ class MainActivity : AppCompatActivity() {
 
 
     internal lateinit var  db:DBAccess
-    internal var entregas:ArrayList<EntregaModel> = ArrayList<EntregaModel>()
-
     lateinit var entregaRecyclerView: RecyclerView
+    lateinit var entregas: ArrayList<EntregaModel>
     lateinit var entregaAdapter: MainAdapter
     lateinit var entregaLayoutManager: RecyclerView.LayoutManager
 
@@ -34,6 +33,7 @@ class MainActivity : AppCompatActivity() {
 
 
         entregaRecyclerView = entregasRecyclerView
+        entregas = ArrayList()
 
         refreshData()
 
@@ -47,6 +47,7 @@ class MainActivity : AppCompatActivity() {
     }
     private fun handleResponse(response: EntregaResponse?){
         val entrega = EntregaModel()
+
         entrega.Id = parseInt(response!!.id.toString())
         entrega.Source = response!!.source
         entrega.Rating = response!!.rating
@@ -68,5 +69,6 @@ class MainActivity : AppCompatActivity() {
         entregaLayoutManager = GridLayoutManager(this,1)
         entregaRecyclerView.adapter = entregaAdapter
         entregaRecyclerView.layoutManager = entregaLayoutManager
+
     }
 }

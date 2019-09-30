@@ -64,7 +64,7 @@ class DBAccess(context:Context) : SQLiteOpenHelper (context, DATABASE_NAME, null
         values.put(COL_ID, entrega.Id)
         values.put(COL_SOURCE, entrega.Source)
         values.put(COL_ADDRESS, entrega.Address)
-        values.put(COL_RATING, entrega.Rating)
+        values.put(COL_RATING, 0)
         values.put(COL_CREATEDON, entrega.Createdon)
 
         db.insert(TABLE_NAME, null,values)
